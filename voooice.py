@@ -6,25 +6,16 @@ import librosa as lr
 import librosa.display
 import IPython.display as ipd
 
+pathAudio = 'Sounds'
+files = librosa.util.find_files(pathAudio, ext=['WAV'])
+files = np.array(files, dtype=float)
+sr = 22050
 
-data_dir = "Sounds/bed/"
-audio_files = glob(data_dir + '/*.wav')
-
-a = len(audio_files)
-print(a)
-audio, sfreq = lr.load(audio_files[0])
-time = np.arange(0, len(audio)) / sfreq
-print(time)
-
-fig, ax = plt.subplots()
-ax.plot(time, audio)
-ax.set(xlabel='Time(s)', ylabel='Sound Amplitude')
-plt.show()
-for files in range(0, len(audio_files), 1):
+for y in files:
 
 
-    ipd.Audio(data_dir)
-    scale, sr = lr.load(data_dir)
+    ipd.Audio(files, rate=22050)
+    scale, sr = lr.load(files)
     filter_banks = lr.filters.mel(n_fft=2048, sr=22050, n_mels=10)
     filter_banks.shape
     plt.figure(figsize=(25, 10))
@@ -33,11 +24,11 @@ for files in range(0, len(audio_files), 1):
                              x_axis="linear")
     plt.colorbar(format="%+2.f")
     plt.show()
-    mel_spectrogram = librosa.feature.melspectrogram(scale, sr=sr, n_fft=2048, hop_length=512, n_mels=10)
+    mel_spectrogram = lr.feature.melspectrogram(scale, sr=sr, n_fft=2048, hop_length=512, n_mels=10)
 
     mel_spectrogram.shape
 
-    log_mel_spectrogram = librosa.power_to_db(mel_spectrogram)
+    log_mel_spectrogram = lr.power_to_db(mel_spectrogram)
     log_mel_spectrogram.shape
 
     plt.figure(figsize=(25, 10))
