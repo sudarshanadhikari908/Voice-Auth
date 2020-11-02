@@ -10,7 +10,9 @@ import IPython.display as ipd
 import os
 
 
-path = ["./Sounds/bed","./Sounds/cat"]
+path = ["./Sounds/bed"]
+# ,"./Sounds/cat"
+# ,"./Sounds/cat"
 # path = np.array(path)
 
 # print (len(path))
@@ -30,6 +32,8 @@ while i < len(path):
     b = read(a)
     i += 1
 b = np.array(b)
+b = np.reshape(b, (2, 1007))
+
 
 print(type(b))
 print (b)
