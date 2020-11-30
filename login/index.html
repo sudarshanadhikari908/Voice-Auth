@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="img-container">
+    <section id="header">
+        <h1>Voice Authentication</h1>
+        <h1><span>System</span></h1>      
+    </section>
+    <section id="container">
+        <div class="titles">
+            <button data-id="login" class="tab-btn selected" >Login</button>
+            <button data-id="register"  class="tab-btn">Register</button>
+        </div>
+        <div class="form-container">
+        <form class="content active" id="login">
+        <div class="inputs">
+         <div class="field">
+            <span class="fa fa-user"></span>
+            <input type="text"  placeholder="username">
+         </div>
+         <div class="field space">
+             <span class="fa fa-lock"></span>
+            <input type="Password"  placeholder="password">
+         </div>
+        </div>
+        
+            <button type="submit">Login</button>
+      
+       
+        </form>
+        <form class="content" id="register">
+            <div class="inputs">
+                <div class="field">
+                    <span class="fa fa-envelope-square"></span>
+                    <input type="email"  placeholder="email address">
+                 </div>
+             <div class="field space">
+                <span class="fa fa-user"></span>
+                <input type="text"  placeholder="username">
+             </div>
+             <div class="field space">
+                 <span class="fa fa-lock"></span>
+                <input type="Password"  placeholder="password">
+             </div>
+            </div>
+            
+                <button type="submit">Register</button>
+          
+            
+            </form>
+        
+        </div>
+        
+    </section>
+    </div>
+   <script src="app.js"></script>
+</body>
+</html>
